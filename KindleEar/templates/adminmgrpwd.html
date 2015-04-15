@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block menubar -%}
+{% endblock -%}
+{% block content -%}
+    {% if tips -%}
+    <p style="color:red;font-weight:bold;">{{tips}}</p>
+    {% endif -%}
+    <form class="pure-form pure-form-aligned" action="" method="POST">
+        <div class="pure-control-group">
+            <label for="u">{{_("Username")}}</label>
+            <input id="u" name="u" type="text" placeholder="Username" 
+            {% if username %}value="{{username}}"{% endif %} />
+        </div>
+        <div class="pure-control-group">
+            <label for="p1">{{_("New password")}}</label>
+            <input id="p1" name="p1" type="password" placeholder="Password" />
+        </div>
+        <div class="pure-control-group">
+            <label for="p2">{{_("Confirm password")}}</label>
+            <input id="p2" name="p2" type="password" placeholder="Password" />
+        </div>
+        <div class="pure-controls">
+            <button type="submit" class="pure-button pure-button-primary">{{_("Confirm Change")}}</button>
+        </div>
+    </form>
+{% endblock -%}

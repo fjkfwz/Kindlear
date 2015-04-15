@@ -1,0 +1,3 @@
+application: kindledogear
+email: fjkfwz@hotmail.com
+timezone: 8

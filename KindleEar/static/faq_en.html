@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>FAQ - Kindle's Ear</title>
+    <meta name="description" content="KindleEar is a service for Amazon Kindle owners that lets you aggregate feeds you chosen and have them delivered to your Kindle in a convenient, easy-to-navigate format." />
+    <link rel="stylesheet" href="base.css" type="text/css" charset="utf-8"/>
+    <style type="text/css">
+    h2{
+      font-size:1.2em;
+      margin-top:2em;
+      padding-left:0.8em;
+      border-left:0.5em outset silver;
+      border-bottom:1px dotted silver;
+    }
+    li{margin:0.5em;list-style-type:square;}
+    ul#navlst > li{list-style-type:circle;}
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1><a href="/">KindleEar</a></h1>
+        <div class="clear"></div>
+    </div>
+    <div class="faqnav">
+      <ul id="navlst">
+        <li><a href="#whatis">What is KindleEar?</a></li>
+        <li><a href="#needserver">Does this application require its own server?</a></li>
+        <li><a href="#ownserver">How to deploy my own delivery server?</a></li>
+        <li><a href="#notreceived">Why do I not receive the deliveries?</a></li>
+        <li><a href="#whatisfulltext">What is full text rss?</a></li>
+        <li><a href="#fulltextandsummary">Can full text rss be processed as summary rss? What about the reverse?</a></li>
+        <li><a href="#weekly">How to deal with weekly subscriptions?</a></li>
+        <li><a href="#moretimesperday">Can KindleEar deliver news to my kindle more than once a day?</a></li>
+        <li><a href="#urlfilter">How to use the url filter?</a></li>
+        <li><a href="#gfwblock">What can I do if the gfw of China blocked some rss?</a></li>
+        <li><a href="#imagesfolder">How to put the cover or the masthead images in the same directory when I add a customize book?</a></li>
+        <li><a href="#sslerror">How to deal with the SSL error problem when I upload KindleEar?</a></li>
+        <li><a href="#garbled">Why some articles have garbled characters?</a></li>
+        <li><a href="#forgotpwd">What can I do if I forget the password?</a></li>
+        <li><a href="#mailservice">How to use mail service xxx@appid.appspotmail.com?</a></li>
+        <li><a href="#errorcodes">There are some logs like 'fetch rss failed(450)' in the gae backend, what's the meaning of them?</a></li>
+        <li><a href="#mergebooks">Why I can't lookup words in the delivery books after I chosen 'Merge books into one'?</a></li>
+        <li><a href="#needlogin">How to deal with those websites that need login before I can view the articles?</a></li>
+        <li><a href="#deletebookschinese">Can I delete/hide books in Chinese?</a></li>
+        <li><a href="#pushseparate">What's the meaning of the "Separate" option for the built-in books?</a></li>
+      </ul>
+    </div>
+
+    <span id="whatis"></span>
+    <h2>What is KindleEar?</h2>
+    <p>KindleEar is a free webapp that running on Google App Engine, it aggregates feeds and deliver the generated docs to your Kindle periodically.</p>
+    <p class="answer">Features:
+    <ul>
+     <li>Custom rss</li>
+   <li>Support full text rss and summary rss</li>
+   <li>Multi-account management, which means that it supports several kindle devices</li>
+   <li>The magazine format MOBI with images</li>
+   <li>Automatically daily scheduled delivery</li>
+   <li>Powerful email service</li>
+    </ul>
+    Benefits:
+    <ul>
+     <li>All free. Not only this application is free, but GAE provides free hosting space, you do not need to pay a penny. </li>
+     <li>Generate fine magazine format books. Sample as follows (the left one is on kindle3, the right two are on kindle touch): </li>
+     <a href="periodical.gif" target="_blank"><img src="periodical.gif" style="width:750px;" /></a>
+    </ul>
+    </p>
+
+    <span id="needserver"></span>
+    <h2>Dows this application require its own server?</h2>
+    <p class="answer">This application is hosted on Google App Engine, it's fine if you don't own a server.</p>
+
+    <span id="ownserver"></span>
+    <h2>How to deploy my own delivery server?</h2>
+    <p class="answer"><strong>The formal way:</strong>
+        <ol>
+        <li><a href="https://github.com/cdhigh/KindleEar/archive/master.zip">Download</a> the latest version of KindleEar on github and then extract it to somewhere, for example C:\KindleEar (we'll use it in the following steps).</li>
+        <li>You need a GAE account, please visit the <a href="https://appengine.google.com/">Google AppEngine</a> page. Use your gmail account to login, click on "Create Application", select "others" in the account activation SMS page, enter your cellphone number with your country code (+nn), click "Send". You will receive an activation message on the phone in a while, after activating your account, click "Create Application" again, in the "Application Identifier" field, enter a name of your applications (e.g. Kindleear123). The remaining options can be kept as default , click on the "Create Application" button to create a GAE application.</li>
+        <li>Install Python 2.7.x. <a href="https://www.python.org/downloads/">Download</a> the latest 2.7.x source release and then install it.  Do not install a Python 3.x version, because GAE does not support it now.</li>
+        <li>Install GAE SDK, which will be used to upload a GAE program. In section on <a href="https://developers.google.com/appengine/downloads">this page</a>, click "Google App Engine SDK for Python", choose your platform, click to download the corresponding version, then install, all the way "next" without words.</li>
+        <li>Go to the previously downloaded KindleEar directory (e.g. C:\KindleEar), use a text editor to open app.yaml and module-worker.yaml file, modify the word 'kindleear' in the first line to your GAE application name (e.g. kindleear123), then save and exit.</li>
+        <li>Modify variables 'SRC_EMAIL' and 'DOMAIN' and 'TIMEZONE' in config.py in same directory of app.yaml. You can modify other variables if you want and understand what it means.Using the default values are recommended.</li>
+        <li>Start upload KindleEar now. You can use Google App Engine Launcher GUI or command line. Because Launcher is not stable, we'll use the command line in Windows.
+          <ul>
+            <li>Followed by clicking: Start - Run - type cmd, it will open a command line window</li>
+            <li>Change current directory to App Engine SDK installation directory, example: "cd C:\Program Files\Google\google_appengine"</li>
+            <li>Enter 'upload' command: C:\python27\python.exe appcfg.py update C:\KindleEar\app.yaml C:\KindleEar\module-worker.yaml</li>
+            <li>Enter the gmail account and password (password does not display in screen).</li></li>
+          </ul>
+        <li>After successfully uploading KindleEar, use your browser to open the site: http://kindleear123.appspot.com (example only, kindleear123 should be changed to the name of your GAE application). If everything goes fine, then go to the last step.</li>
+        <li>Add your gmail account to your kindle email whitelist. You should know how to do it already.</li>
+        <li>Then what? Enjoy your own delivery service now!</li>
+        </ol>
+    <p><strong>The easy way(recommended):</strong>
+        <ol>
+        <li>Download <a href="https://github.com/cdhigh/KindleEar/archive/master.zip">KindleEar</a> and extract it, get a GAE account, create an application.</li>
+        <li>Download <a href="https://drive.google.com/folderview?id=0ByRickMo9V_XNlJITzhYM3JOYW8&usp=sharing">uploader</a>. (for windows user only)</li>
+        <li>Extract 'uploader' to a directory, move the folder of KindleEar into the folder of 'uploader' and rename it to kindleear, then double-click 'uploader.bat' to upload.</li>
+        </ol></p>
+    </p>
+
+    <span id="notreceived"></span>
+    <h2>Why do I not receive the deliveries?</h2>
+    <p class="answer">There are many possible reasons:
+    <ol>
+    <li>You haven't enabled the "Enable deliver custom rss" option, this option is at the bottom of the setting page.</li>
+    <li>You haven't added your gmail address to Amazon's <a href="https://www.amazon.com/gp/digital/fiona/manage#pdocSettings" rel="external" target="_blank">'Approved Personal Document E-mail List'</a>.</li>
+    <li>The content of the rss link isn't a valid XML format.</li>
+    </ol></p>
+
+    <span id="whatisfulltext"></span>
+    <h2>What is full text rss?</h2>
+    <p class="answer">Full text rss means that it contains all the contents of the articles in the rss, while summary rss contains only brief descriptions of the articles. You can check it by opening the link of the rss.</p>
+
+    <span id="fulltextandsummary"></span>
+    <h2>Can full text rss be processed as summary rss? What about the reverse?</h2>
+    <p class="answer">Full text rss can be treated as summary rss. In this case, program will ignore the content in the rss xml file and fetch full text from the original link. It costs much time which will result the decreasing of supported rss quantities. If summary rss is processed as full text rss, articles sent to your kindle would still have brief descriptions only.</p>
+
+    <span id="weekly"></span>
+    <h2>How to deal with weekly subscription?</h2>
+    <p class="answer">Some rss are updated weekly. For this type of rss, you can touch a new python file in the 'books' directory with variable 'deliver_days' setted to a day(e.g. deliver_days=['Friday']).</p>
+
+    <span id="moretimesperday"></span>
+    <h2>Can KindleEar deliver news to my kindle more than once a day?</h2>
+    <p class="answer">The answer is yes, follow the next steps to make it come true:
+    <ol>
+      <li>Add a python file to the directory of 'books'.</li>
+      <li>Set 'deliver_times' using a list in the new python file.
+        <br />For example: <code>deliver_times=[6,14,22] #6:00,14:00,22:00 deliver three times a day</code>
+      </li>
+      <li>Optional: set 'oldest_article' to the number of interval seconds between two deliveries.
+        <br />For example: <code>oldest_article=28800 #8*60*60</code>
+      </li>
+    </ol>
+    </p>
+
+    <span id="urlfilter"></span>
+    <h2>How to use the url filter?</h2>
+    <p class="answer">Url filter is not for beginners, you need to know regular expression and python. Urls in the list would not be downloaded for saving time.</p>
+
+    <span id="gfwblock"></span>
+    <h2>What can I do if the gfw of China blocked some rss?</h2>
+    <p class="answer">Change the link to use https protocol.</p>
+
+    <span id="imagesfolder"></span>
+    <h2>How to put the cover or the masthead images in the same directory when I add a customize book?</h2>
+    <p class="answer">Set the variable mastheadfile and coverfile to a path, for example:<ul>
+        <li>mastheadfile = 'books/xxxx.gif'</li>
+        <li>coverfile = 'books/xxxx.jpg'</li></ul>
+    </p>
+
+    <span id="sslerror"></span>
+    <h2>How to deal with the SSL error problem when I upload KindleEar?</h2>
+    <p class="answer">Some friends in China would encounter "urllib2.URLError: &lt;urlopen error [Errno 8] _ssl.c:504: EOF occurred in violation of protocol&gt;". To solve this problem, try to add a new line "74.125.229.174  appengine.google.com" to the hosts file.</p>
+
+    <span id="garbled"></span>
+    <h2>Why some articles have garbled characters?</h2>
+    <p class="answer">For custom rss and the built-in books without encoding specified, program detects encoding automatically by using http header, html meta or the chardet module of python. Howerver, the result is not 100% accurate. If the encoding detecting is wrong, the article may be garbled. Because this situation is very rare, KindleEar only supplies an not very elegant solution: manually change the chardet-detect encoding saved in the database. Steps as follows:<br />
+    <ol><li>Login appid.appspot.com by using account 'admin'(assuming your application name is appid).</li>
+    <li>Visit 'https://appid.appspot.com/dbviewer'. Check the encoding of the website whose articles are garbled in the UrlEncoding section. If the encoding is wrong, take down its ID.</li>
+        <li>Now visit 'https://appid.appspot.com/dbviewer?action=modurlenc&id=dbid&feedenc=fenc&pageenc=penc'
+        <ul>Before you press enter, modify some vaiables:
+            <li>dbid: the ID you just took down.</li>
+            <li>fenc: new correct FeedEncoding.</li>
+            <li>penc: new correct PageEncoding.</li>
+        </ul></li>
+    <li>Or you can change them in 'Datastore viewer' in the GAE backend.</li>
+    <li>You can get the correct encoding by reading source code of a webpage.</li>
+    <li>If you cannot find the website in page 'dbviewer', it means KindleEar has never detected the encoding of any page of this website, http header or html meta is used only. In this case, you can set the variable 'ALWAYS_CHAR_DETECT' in 'config.py' to True.</li>
+    <li>If the article still has garbled characters after setting 'ALWAYS_CHAR_DETECT' to True, it means that encoding detected by chardet is wrong and doesn't match with the http header or the html meta. The final attempt is to set 'TRUST_ENCODING_IN_HEADER_OR_META' to True.</li>
+    <li>With all the solutions tested and the problem still exists, please add the rss to a python file in the folder 'books' with encoding specified.</li>
+    </ol>
+    </p>
+
+    <span id="forgotpwd"></span>
+    <h2>What can I do if I forget the password?</h2>
+    <p class="answer">If you are a non-administrator user, and you forget the password, you can ask the administrator to change your password. If the administrator password was forgot, you can login appengine.google.com, select "Datastore Admin" on the left, delete all KeUser data, all the account information will be deleted. And then re-use admin/admin to login in  your application . Did not find "Datastore Admin"? You can activate it in the "Application Settings".
+    <br />If you know python, I'm sure that you can find other solutions.</p>
+
+    <span id="mailservice"></span>
+    <h2>How to use mail service xxx@appid.appspotmail.com?</h2>
+    <p class="answer">
+    You'll have uncountable mail addresses like xxx@appid.appspotmail.com as long as xxx is valid ascii string after you have deployed KindleEar(appid is your application id).<br/>
+    <ul> <li>KindleEar will convert the text of the email received from xxx@appid.appspotmail.com as an attachment and then send it to your registered email address. If there are only hyperinks in the email, KindleEar will first fetch the url, generate a book and then send it.</li>
+       <li>Before you can enjoy the feature, please add email addresses to the whitelist in menu 'Advance'|'White List'. A asterisk '*' means allow anyone to trigger it, or only allow some people by adding their emaill addresses like 'john@example.com/susan@example.com'.</li>
+       <li>The generated book will be sent to admin's mailbox by default. Use username__xxx@appid.appspotmail.com(Note: there're two underscores) if you want the book to be sent to other registered users.</li>
+       <li>Send emails with the download link of an ebook to book@appid.appspotmail.com or username__book@appid.appspotmail.com will trigger a task to download the ebook and then diliver it to kindle directly.<br />
+        Refer to <a href="https://developers.google.com/appengine/docs/python/mail#Python_Sending_mail_with_attachments">Mail Python API Overview</a> to get to know the list of allowed postfix of ebooks. <br /></li>
+       <li>Send emails to trigger@appid.appspotmail.com or username__trigger@appid.appspotmail.com will trigger a delivery by hand.It equals to the 'deliver now' button in 'Setting' Menu if the subject is empty or is 'all'.Deliver specific books by adding the name of the book, seperate with commma if there is more than one.<br /></li>
+    </ul>
+    </p>
+
+    <span id="errorcodes"></span>
+    <h2>There are some logs like 'fetch rss failed(450)' in the gae backend, what's the meaning of them?</h2>
+    <p class="answer">The number in parentheses is an error code. Besides the standard error codes, hereafter shows errorcodes defined by KindleEar.
+    <ul><li>504:timeout.</li>
+    <li>509:file too large, GAE has a limit of 4MB for each file/page.</li>
+    <li>452:the website doesn't support https protocol.</li>
+    <li>453:need authentication.</li>
+    <li>450:fail to download.</li>
+    <li>451:other exceptions.</li></ul></p>
+
+    <span id="mergebooks"></span>
+    <h2>Why I can't lookup words in the delivery books after I chosen 'Merge books into one'?<a name="mergebooks" id="mergebooks" >&nbsp;</a></h2>
+    <p class="answer">With the option 'Merge books in one' checked, KindleEar will set the metadata of the book as Custom Rss. To fix this problem, you have to set the language attribute in the 'Custom Rss Setting' section  manually.</p>
+
+
+    <span id="needlogin"></span>
+    <h2>How to deal with those websites that need login before I can view the articles?</h2>
+    <p class="answer">
+        If you want to crawl a website that needs login, you have to add a python file to the folder 'books'. Refer to sample books if you don't know how to write it.
+        <ol>
+            <li><code>needs_subscription</code>&nbsp;: Set to True</li>
+            <li><code>login_url</code>&nbsp;: The URL for login page</li>
+            <li><code>form_4_login</code>&nbsp;: Optional, if not set, KindleEar will guess which form in the page is used to login. Set to an integer indicate the sequence number (where 0 is the first) of the form in the page. Set to a string indicate the name of the form, you can use CSS selector: '#' for id and '.' for class, string only will match any of it(name/id/class).</li>
+            <li>Then login to KindleEar. In the 'Feeds' page, a new 'Login info' button will appear on the right side of the book which needs_subscription setted to True in the 'Subscripted' section. Click on it and then fill in your account name and password.</li>
+        </ol>
+        <p>Note1: currently we don't support those sites that need run javascript to login or need to input a captcha.</p>
+        <p>Note2: for some special site, you may have to overwirte the 'login' function which inherits from the 'BaseFeedBook' class.</p>
+        <p>Note3: the password will be stored encrypted on GAE, the key for encryption is a random string for each account of KindleEar, but the key is also stored on GAE, so it's not absolutely safe, please keep this in mind.</p>
+    </p>
+
+    <span id="deletebookschinese"></span>
+    <h2>Can I delete/hide books in Chinese?</h2>
+    <p class="answer">
+        If you are not Chinese, you can delete some *.py files in directory 'books'. <br />'__init__.py' and 'base.py' are required, please don't remove them.
+    </p>
+
+    <span id="pushseparate"></span>
+    <h2>What's the meaning of the "Separate" option for the built-in books?</h2>
+    <p class="answer">If you choose this option, the book you chosen will be sent to kindle separately even if the option "Merge books into one" is chosen.</p>
+
+
+    <p style="font-size:90%;color:gray;margin-top:2em;">I'm sorry for my poor English, please feel free to open an issue on github when you get puzzled, and it will be appreciated if you can help me improve this documentation.</p>
+    <div id="footer">
+        <div class="clear"></div>
+        2013 &copy; KindleEar&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="/static/faq_en.html" target="_blank" style="text-decoration:none;">FAQ</a>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="https://github.com/cdhigh/kindleear" target="_blank" style="text-decoration:none;">Github page</a>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="http://appengine.google.com" target="_blank" style="text-decoration:none;">App Engine</a>
+        <pre><p></p></pre>
+    </div>
+</body>
+</html>

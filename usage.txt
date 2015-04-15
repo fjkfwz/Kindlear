@@ -1,0 +1,17 @@
+将下载下来的KindleEar压缩包解压到本目录下，并命名解压后的目录名为kindleear，
+直接双击uploader.bat则启动上传程序，按提示输入APPID/EMAIL/TIMEZONE后会正式执行
+GAE SDK上传，按提示输入邮箱和密码即可。
+APPID/EMAIL/TIMEZONE仅需要输入一次，以后的升级不需要再次输入，仅需要按'y'确认即可。
+
+如果上传过程中出错，可能无法重新上传，并且会提示运行'appcfg rollback'进行回滚，
+碰到此情况请先执行rollback.bat，然后再重新执行uploader.bat
+
+===============================================
+注意：从1.13之前的版本升级到1.13之后的版本时如果报错：
+Your application currently has custom performance settings that are not 
+compatible with the Modules feature. You must either clear or migrate these application-
+level settings before you can upload a non-default module. See the Performance 
+section of the Application Settings page of the Admin Console for more information.
+则需要打开appengine.google.com，在你的应用中的选项“Application Settings”中
+查找区段“Performance Settings Migration for Modules”，然后点击“Migrate Settings”，
+再页面最下面点击“Yes, migrate”，然后再执行uploader.bat。

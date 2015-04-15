@@ -1,0 +1,502 @@
+# KindleEar translation.
+# Copyright (C) 2013 Kindle Turkiye Facebook Group
+# Kindle Turkiye Facebook Group, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.6\n"
+"PO-Revision-Date: 2014-04-04 19:30+0800\n"
+"Last-Translator: rexdf <rexdf@rexdf.rexdf>\n"
+"Language-Team: Kinde Turkiye Facebook Group\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+"X-Generator: Poedit 1.6.4\n"
+"POT-Creation-Date: \n"
+"Language: tr_TR\n"
+
+msgid "Device type"
+msgstr "Cihaz tipi"
+
+msgid "Old password is wrong!"
+msgstr "Eski şifre yanlış!"
+
+msgid "The two new passwords are dismatch!"
+msgstr "Yeni şifre girişleri aynı değil!"
+
+msgid "Change password success!"
+msgstr "Şifre başarıyla değiştirildi!"
+
+msgid "Username is empty!"
+msgstr "Kullanıcı adı boş olamaz!"
+
+msgid "Already exist the username!"
+msgstr "Bu isimde bir kullanıcı kaydı zaten mevcut!"
+
+msgid "Add a account success!"
+msgstr "Yeni hesap başarıyla eklendi!"
+
+msgid "Please use admin/admin to login at first time."
+msgstr "İlk giriş için kullanıcı adı:'admin' ve şifre: 'admin'"
+
+msgid "Please input username and password."
+msgstr "Lütfen kullanıcı adı ve şifresini giriniz"
+
+msgid "The len of username reached the limit of 25 chars!"
+msgstr "Kullanıcı adı 25 karakterden fazla olmamalı!"
+
+msgid "The username includes unsafe chars!"
+msgstr "Kullanıcı adı alfa-numerik olmalı!"
+
+msgid "The password includes non-ascii chars!"
+msgstr "Şifrenizde ASCII dışı karakterler olmamalı"
+
+msgid "The username not exist or password is wrong!"
+msgstr "Kullanıcı mevcut değil veya şifre hatalı!"
+
+msgid "Please input new password to confirm!"
+msgstr "Lütfen onaylamak için yeni şifreyi giriniz! "
+
+msgid "The username '%s' not exist!"
+msgstr "'%s' isminde bir kullanıcı bulunmuyor!"
+
+msgid "Please confirm to delete the account!"
+msgstr "Lütfen hesap silme işlemini onaylayınız!"
+
+msgid "The username is empty or you dont have right to delete it!"
+msgstr "Kullanıcı adı mevcut değil veya sizin silmeye yetkiniz yok!"
+
+msgid "Title or url is empty!"
+msgstr "URL veya başlık hatalı"
+
+msgid "Book(s) (%s) put to queue!"
+msgstr "%s kitapları işlem sırasına eklendi"
+
+msgid "No book to deliver!"
+msgstr "Gönderilecek kitap yok!"
+
+msgid "Logout"
+msgstr "Çıkış"
+
+msgid "Feeds"
+msgstr "RSSler"
+
+msgid "Setting"
+msgstr "Ayarlar"
+
+msgid "Logs"
+msgstr "Kayıtlar"
+
+msgid "Admin"
+msgstr "Yönetim"
+
+msgid "Advance"
+msgstr "Gelişmiş"
+
+msgid "Please Login"
+msgstr "Lütfen Giriş Yapın"
+
+msgid "Change Password"
+msgstr "Şifre Değiştirme"
+
+msgid "Old password"
+msgstr "Eski şifre"
+
+msgid "New password"
+msgstr "Yeni şifre"
+
+msgid "Confirm Change"
+msgstr "Değişikliği Onayla"
+
+msgid "Add Account"
+msgstr "Hesap Ekle"
+
+msgid "Username"
+msgstr "Kullanıcı adı"
+
+msgid "Password"
+msgstr "Şifre"
+
+msgid "Confirm password"
+msgstr "Şifreyi onayla"
+
+msgid "Add"
+msgstr "Ekle"
+
+msgid "Note : No supports many accounts for limit of free account of GAE."
+msgstr ""
+"Not: Ücretsiz Google App Engine hesabında çok fazla kullanıcı oluşturma "
+"sorun oluşturabilir..."
+
+msgid "Accounts"
+msgstr "Hesaplar"
+
+msgid "No."
+msgstr "No:"
+
+msgid "Enable"
+msgstr "Aktif"
+
+msgid "Operation"
+msgstr "İşlemler"
+
+msgid "Change"
+msgstr "Değiştir"
+
+msgid "Delete"
+msgstr "Sil"
+
+msgid "Url Filter"
+msgstr "URL Filtresi"
+
+msgid "Urls in list would not be downloaded."
+msgstr "Bu listedeki URLler zamandan kazanmak için indirilmeyecektir."
+
+msgid "Please input regular expression"
+msgstr "Bir regex(düzenli ifade) belirtin"
+
+msgid "White List"
+msgstr "Beyaz liste"
+
+msgid ""
+"mail sent to %sxxx@<em>appid</em>.appspotmail.com will be transfered to your "
+"email."
+msgstr ""
+"%sxxx@<em>appid</em>.appspotmail.com adresine gönderilen emailler admin "
+"hesabına bağlı Kindle’a gönderilecek."
+
+msgid "Please input mail address"
+msgstr "Lütfen e-posta adresini giriniz"
+
+msgid "Auto back to previous page after 5 seconds"
+msgstr "5 saniye sonra otomatik olarak önceki sayfaya döneceksiniz."
+
+msgid "Click to back"
+msgstr "Geri dönmek için tıklayınız"
+
+msgid "Free Forever."
+msgstr "Daima Ücretsiz."
+
+msgid "Good News Always Come With You."
+msgstr "İyi Haberler Daima Sizinle Olsun."
+
+msgid "Inherited From Calibre"
+msgstr "Calibre Kodları Kullanıldı."
+
+msgid "Share Your Idea"
+msgstr "Fikrinizi Paylaşın"
+
+msgid ""
+"Author modified and ported Calibre to generate mobi file in GAE without "
+"kindlegen tool of Amazon,"
+msgstr ""
+"Google App Engine de Amazonun Kindlegen uygulamasını kullanmadan mobi "
+"dosyalar oluşturabilmek için Calibre kodlarını yeniden düzenlenmiştir."
+
+msgid "for periodical mobi file is a better format to represent news feeds."
+msgstr "Çünkü mobi formatı RSSleri sunmak için iyi bir formattır."
+
+msgid "With my"
+msgstr "Bu"
+
+msgid "open source KindleEar application"
+msgstr "açık kaynak KindleEar uygulaması"
+
+msgid ""
+", You can deploy your own server to push news feeds to your kindle dialy or "
+"share with your friends."
+msgstr ""
+"ile siz de kendi serverınızı kurup Kindle'ınıza RSS'leri günlük gönderebilir "
+"veya arkadaşlarınızla paylaşabilirsiniz."
+
+msgid "Login"
+msgstr "Giriş"
+
+msgid "The website dont allow register, you can ask owner for a account."
+msgstr ""
+"Yeni bir hesap açmak için bir site yönetici ile iletişime geçmeniz "
+"gerekmektedir."
+
+msgid "Only display last 10 logs"
+msgstr "Sadece son 10 işlem kaydını gösterir."
+
+msgid "Time"
+msgstr "Tarih/Saat"
+
+msgid "Title"
+msgstr "Başlık"
+
+msgid "Size"
+msgstr "Dosya Boyutu"
+
+msgid "To"
+msgstr "Kime"
+
+msgid "Status"
+msgstr "Durum"
+
+msgid "Has no log"
+msgstr "Kayıt yok."
+
+msgid "Subscribed"
+msgstr "Abone Olduğunuz Kitaplar"
+
+msgid "Unsubscribe"
+msgstr "İptal"
+
+msgid "No have book subscribed"
+msgstr "Abone olduğunuz kitap yok."
+
+msgid "Custom Rss"
+msgstr "Özel RSS"
+
+msgid "Fulltext"
+msgstr "Tam Metin"
+
+msgid "Unsubscribed"
+msgstr "Abone Olmadığınız Kitaplar"
+
+msgid "Subscribe"
+msgstr "Abone ol"
+
+msgid "No have book unsubscrebed"
+msgstr "Abone olmadığınız kitap yok."
+
+msgid "Your account will pause after"
+msgstr "Bu hesabın gönderileri şu tarihte duraklatılacak:"
+
+msgid ", Please login before expire."
+msgstr ", duraklatılmaması için bu tarihten önce giriş yapınız."
+
+msgid "Delete Account"
+msgstr "Hesabı Sil"
+
+msgid "Kindle E-mail is requied!"
+msgstr "Kindle E-mail adresi gerekli!"
+
+msgid "Title is requied!"
+msgstr "Başlık zorunlu!"
+
+msgid "Settings Saved!"
+msgstr "Ayarlar Kaydedildi!"
+
+msgid "Base Setting"
+msgstr "Temel Ayarlar"
+
+msgid "Kindle E-mail"
+msgstr "Kindle E-mail"
+
+msgid "The item is empty"
+msgstr "İçerik boş"
+
+msgid "Enable deliver"
+msgstr "Gönderimleri aktifleştir."
+
+msgid "Time zone"
+msgstr "Saat dilimi"
+
+msgid "Deliver time"
+msgstr "Gönderim zamanı"
+
+msgid "Book type"
+msgstr "Dosya tipi"
+
+msgid "Deliver now"
+msgstr "Şimdi gönder"
+
+msgid "Note: task deliver will be executed after some minutes."
+msgstr "Not: Gönderim, tıkladıktan birkaç dakika sonra gerçekleşir."
+
+msgid "Custom Rss Setting"
+msgstr "Özel RSS Ayarları"
+
+msgid "Language"
+msgstr "Dil"
+
+msgid "Chinese"
+msgstr "Çince"
+
+msgid "English"
+msgstr "İngilizce"
+
+msgid "French"
+msgstr "Fransızca"
+
+msgid "Spanish"
+msgstr "İspanyolca"
+
+msgid "Portuguese"
+msgstr "Portekizce"
+
+msgid "German"
+msgstr "Almanca"
+
+msgid "Italian"
+msgstr "İtalyanca"
+
+msgid "Japanese"
+msgstr "Japonca"
+
+msgid "Russian"
+msgstr "Rusça"
+
+msgid "Turkish"
+msgstr "Türkçe"
+
+msgid "Keep images"
+msgstr "Resimler gözüksün."
+
+msgid "Enable deliver custom rss"
+msgstr "Özel RSS gönderimini aktifleştir."
+
+msgid "This switch only effective when 'Enable deliver' is enabled."
+msgstr ""
+"Bu ayar yalnızca ’Gönderimleri aktifleştir.’ seçeneği seçilmişken geçerlidir."
+
+msgid "Save settings"
+msgstr "Ayarları kaydet"
+
+msgid "Important: Please activate your kindle firstly, and goto"
+msgstr "Önemli: Lütfen ilk olarak Kindle'ınızı aktifleştirin ve"
+
+msgid "Page and add"
+msgstr "sayfasına gidin."
+
+msgid "to 'Approved Personal Document E-mail List'."
+msgstr "mail adresini onaylanmış mail adreslerine ekleyin."
+
+msgid "Title format"
+msgstr "Başlık Formatı"
+
+msgid "Title Only"
+msgstr "Yalnızca Başlık"
+
+msgid "Title YYYY-MM-DD"
+msgstr "Başlık YYYY-AA-GG"
+
+msgid "Title MM-DD"
+msgstr "Başlık AA-GG"
+
+msgid "Title MM/DD"
+msgstr "Başlık AA/GG"
+
+msgid "Title DD/MM"
+msgstr "Başlık GG/AA"
+
+msgid "Title MMM DD"
+msgstr "Başlık AAA GG"
+
+msgid "Title Day, MMM DD"
+msgstr "Başlık Gün, AAA GG"
+
+msgid "Oldest article"
+msgstr "En eski içerik?"
+
+msgid "No limit"
+msgstr "Sınırlama yok."
+
+msgid "1 Day"
+msgstr "1 Günlük"
+
+msgid "2 Days"
+msgstr "2 Günlük"
+
+msgid "3 Days"
+msgstr "3 Günlük"
+
+msgid "4 Days"
+msgstr "4 Günlük"
+
+msgid "5 Days"
+msgstr "5 Günlük"
+
+msgid "6 Days"
+msgstr "6 Günlük"
+
+msgid "7 Days"
+msgstr "7 Günlük"
+
+msgid "Deliver days"
+msgstr "Gönderim Günleri"
+
+msgid "Mon"
+msgstr "Pzt"
+
+msgid "Tue"
+msgstr "Sal"
+
+msgid "Wed"
+msgstr "Çar"
+
+msgid "Thu"
+msgstr "Prş"
+
+msgid "Fri"
+msgstr "Cum"
+
+msgid "Sat"
+msgstr "Cts"
+
+msgid "Sun"
+msgstr "Paz"
+
+msgid "Logs of other users"
+msgstr "Diğer kullanıcıların işlem kayıtları"
+
+msgid "Merge books into one"
+msgstr "Kitapları birleştirerek gönder"
+
+msgid "Append hyperlink '%s' to article"
+msgstr "'%s' linkini makaleye ekle"
+
+msgid "Share"
+msgstr "Paylaş"
+
+msgid "Append hyperlinks for share to article."
+msgstr "Paylaşım linklerini makaleye ekle."
+
+msgid "Fuck Gfw (For users in China)"
+msgstr "Fuck Gfw (Çindeki kullanıcılar için)"
+
+msgid "Others"
+msgstr "Diğerleri"
+
+msgid "Login Info"
+msgstr "Giriş Bilgisi"
+
+msgid "Input website login info for book '%s'"
+msgstr "'%s' kitabı için giriş bilgilerini belirtin"
+
+msgid "Leave any field empty to delete info from database."
+msgstr "Herhangi bir bilgiyi silmek için alanını boş bırakın."
+
+msgid "Account"
+msgstr "Hesap"
+
+msgid "Submit"
+msgstr "Gönder"
+
+msgid "Import Feeds"
+msgstr "feedleri içeri aktar"
+
+msgid "Import"
+msgstr "İçeri aktar"
+
+msgid "Import custom rss from a OPML file."
+msgstr "Bir OPML dosyasındaki rss'leri içeri aktar."
+
+msgid "Download"
+msgstr "İndir"
+
+msgid "Separate"
+msgstr "Ayır"
+
+msgid "Title from"
+msgstr "Başlığın alınacağı yer"
+
+msgid "Webpage"
+msgstr "Web sitesi"
+
+msgid "Feed"
+msgstr "Feed"

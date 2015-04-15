@@ -1,0 +1,20 @@
+Uncompress the zip file downloaded from github into this directory, 
+and then rename it to kindleear, double-click uploader.bat to start upload procedure.
+you will need to input appid/email/timezone to configure KindleEar as prompted in monitor.
+after first time, you would not need to input them again.
+
+If failed at ultima upload procedure, you maynot upload again, GAE will prompt that you 
+can undo the transaction with 'appcfg rollbak'. If you encounter the prompt, 
+please run 'rollback.bat' firstly, and then run 'uploader.bat'.
+
+===============================================
+Note: If warning message shows when update from early 1.13 to 1.13 and above:
+"Your application currently has custom performance settings that are not compatible 
+with the Modules feature. You must either clear or migrate these application-
+level settings before you can upload a non-default module. See the Performance 
+section of the Application Settings page of the Admin Console for more information."
+
+You should open 'https://appengine.google.com', find the section 
+'Performance Settings Migration for Modules' in menubar 'Application Settings', 
+click button 'Migrate Settings' to migrate.
+after migration, click uploader.bat to upload.

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block css -%}
+<style type="text/css">
+#tips{
+    color:red;
+    font-size:0.8em;
+    text-align:center;
+}
+#note{
+    color:grey;
+    font-size:0.8em;
+    text-align:center;
+}
+</style>
+{% endblock -%}
+{% block bodytag -%}
+<body onload="document.getElementById('u').focus();">
+{% endblock -%}
+{% block menubar -%}
+{% endblock -%}
+{% block content -%}
+    <fieldset id="fs_login">
+    {% if tips -%}
+    <p id="tips">{{tips}}</p>
+    {% endif -%}
+    <form action="/login" method="POST" class="pure-form pure-form-aligned">
+        <div class="pure-control-group">
+            <label for="u">{{_("Username")}}</label>
+            <input id="u" name="u" type="text" placeholder="Username" 
+            {% if username %}value="{{username}}"{% endif %} />
+        </div>
+        <div class="pure-control-group">
+            <label for="p">{{_("Password")}}</label>
+            <input id="p" name="p" type="password" placeholder="Password" />
+        </div>
+        <div class="pure-controls">
+            <button type="submit" class="pure-button pure-button-primary">{{_("Login")}}</button>
+        </div>
+    </form>
+    </fieldset>
+    <p id="note">{{_("The website dont allow register, you can ask owner for a account.")}}</p>
+{% endblock -%}
